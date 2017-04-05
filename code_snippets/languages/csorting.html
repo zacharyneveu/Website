@@ -1,0 +1,223 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../projectStyle.css">
+<link href="https://fonts.googleapis.com/css?family=Rye|Ubuntu" rel="stylesheet">
+
+<!-- Code highlighting options -->
+<link rel="stylesheet" href="../../lib/code_highlight/styles/gruvbox-dark.css">
+<script src="../../lib/code_highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<title>
+	C and C++ Sorting Algorithms
+</title>
+
+</head>
+<body>
+	<div id="header">
+		<center>
+			<h1>
+				Sorting Algotithms
+			</h1>
+		</center>
+	</div>
+
+	<div id="container">
+		<div id="lhs" class = "column">
+			<div id="row1left" class="row">
+				<h3>
+					Quicksort
+				</h3>
+				This algorithm sorts an array of elements with a runtime of O(nlog(n)).  It involves two separate functions, one to partition the array and return the middle number, and the other to manage the recursion of the function.
+				<pre>
+				<code class ="cpp">
+//quicksort template function
+template&lt;class T>
+void quickSort(T A[], int left, int right)
+{
+	//terminates when left is equal to right
+	if (left &lt; right)
+	{
+		//creates pivot s, with all &lt; s to left and all > to right
+		int s = partition(A, left, right);
+
+		//recursively divide and conquer to sort
+		quickSort(A, left, s-1);
+		quicksort(A, s, right);
+	}
+}
+
+//partition template function
+template&lt;class T>
+int partition(T A[], int left, int right)
+{
+	//pick pivot at right side
+	T x = A[right];
+	int i = left - 1;
+
+	//temp variable for swaps
+	T temp;
+
+	//for loop iterates from left to right over array
+	for (int j=left; j &lt; right; j++)
+	{
+		if(A[j] &lt;= x)
+		{
+			i++;
+
+			//swap A[i] and A[j]
+			temp = A[i];
+			A[i] = A[j];
+			A[j] = temp;
+		}
+		//swap A[i+1] and A[right]
+		temp = A[i+1];
+		A[i+1] = A[right];
+		A[right] = temp;
+	}
+	return i+1;
+}
+
+				</code>
+				</pre>
+			</div>
+
+			<div id=row2left class="row">
+			<h3> Bubble Sort </h3>
+			This algorithm is slower than quicksort and heapsort (O(n^2)), but is very
+			simple conceptually.  Starting at the beginning of the
+			vector/array, each consecutive pair of elements is swapped if the
+			first is bigger than the second.  By the end of the vector, the
+			biggest element is in the final position.  This process is repeated
+			recursively, excluding the final element each time until the only
+			one element remains to be sorted.
+			<pre>
+				<code class="cpp">
+#include&lt;vector>
+
+//bubblesort function
+    template &lt;class T>
+void bubbleSort(vector&lt;T> A)
+{
+    for (int j = A.size(); j > 1; j--)
+    {
+        //iterate over all items to still be sorted
+        for (int i = 0; i &lt; j - 1; i++)
+        {
+            //if swap needs to occur
+            if (A[i] > A[i + 1])
+            {
+                //swap A[i] and A[i+1]
+                temp = A[i];
+                A[i] = A[i + 1];
+                A[i + 1] = temp;
+            }
+        }
+    }
+}
+
+
+				</code>
+			</pre>
+
+			</div>
+		</div>
+
+		<div id="rhs" class = "column">
+			<div id="row1right" class="row">
+				<h3> Heap Sort </h3>
+				This is an algorithm to sort a vector of data using a heap.  To
+				use this code, one must first have the data stored in MaxHeap
+				format inside the vector, with a data member <i> heapsize </i>
+				set to the size of the heap vector initially.  The buildMaxHeap(
+				) method in tandem with the maxHeapify()
+				method create and maintain the heap property to the vector, that
+				every parent must be larger than both of its children.  This
+				algorithm has a runtime of O(nlog(n)), making it within a
+				constant factor of quicksort.  This algorithm was used to sort a
+			   	dictionary of words into alphabetical order.
+				<pre>
+					<code class="cpp">
+template&lt;class T>
+vector&lt;T> heap&lt;T>::maxHeapSort()
+{
+    string temp;
+
+    for (int i = heapsize; i > 1; i--)
+    {
+
+        //swap data[i] and data [1] (first and last elements)
+        temp = data[i];
+        data[i] = data[1];
+        data[1] = temp;
+
+        //decrement heap size to exclude sorted value
+        heapsize--;
+
+        //reorganize heap with new top value
+        maxHeapify(1);
+    }
+
+    return data;
+}
+
+//arranges array to meet maxHeap property
+template<class T>
+void heap<T>::buildMaxHeap()
+{
+
+    for (int i = heapsize / 2; i > 0; i--)
+    {
+        maxHeapify(i);
+    }
+}//end function
+
+//maxHeapify ensures that the maxHeap property is upheld at the node
+//specified by the index passed
+template&lt;class T>
+void heap&lt;T>::maxHeapify(const int &index)
+{
+    int l = left(index);
+    int r = right(index);
+    int largest = 0;
+    string temp;
+
+    //if left child in range and greater than parent
+    if (l &lt;= heapsize && data[index] &lt; data[l])
+    {
+        largest = l;
+    }
+    else
+    {
+        largest = index;
+    }
+
+    //if right child in range and bigger than parent and left child
+    if (r &lt;= heapsize && data[largest] &lt; data[r])
+    {
+        largest = r;
+    }
+
+    //cout&lt;&lt;"largest: "&lt;&lt;data[largest]&lt;&lt;endl;
+    if (largest != index)
+    {
+        //swap data[i] and data[largest];
+        //cout&lt;&lt;"swapping: "&lt;&lt;data[index]&lt;&lt;"&lt;->"&lt;&lt;data[largest]&lt;&lt;endl;
+        temp = data[index];
+        data[index] = data[largest];
+        data[largest] = temp;
+
+        //recursively call until smallest data gets to bottom
+        this->maxHeapify(largest);
+    }//end if
+}//end function
+
+					</code>
+				</pre>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

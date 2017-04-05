@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../projectStyle.css">
+<link href="https://fonts.googleapis.com/css?family=Rye|Ubuntu" rel="stylesheet">
+
+<!-- Code highlighting options -->
+<link rel="stylesheet" href="../../lib/code_highlight/styles/gruvbox-dark.css">
+<script src="../../lib/code_highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<title>
+	Sequential Logic
+</title>
+
+</head>
+<body>
+	<div id="header">
+		<center>
+			<h1>
+				Sequential Logic
+			</h1>
+		</center>
+	</div>
+
+	<div id="container">
+		<div id="lhs" class = "column">
+			<div id="row1left" class="row">
+				<h3> Register File </h3>
+				This is the code for a 32x32 register file.  The design has one
+				write port and two read ports.  This way two values can be
+				accessed at once and sent to the <a href="combinational.html">
+					ALU</a>, and the result can be written back into the
+				register file.
+
+				<pre>
+					<code class="verilog">
+//32x32 register file.  Runs as expected using included test bench.
+module regfile32x32(
+	input clock,
+	input clear,
+	input[4:0]read_index_1,read_index_2,
+	input[4:0]write_index1, write_index2,
+	input write1,
+	input[31:0]write_data1,
+	input write2,
+	input[31:0]write_data2,
+	output[31:0]read_data_1,read_data_2
+	);
+
+	reg[31:0] content[31:0];
+	integer i;
+	always@(negedge clock, posedge clear)
+		if(clear)
+			for(i=0;i&lt;32;i++)
+				content[i]=0;
+		else if(write1|write2)
+			begin
+			//Always write with first write port if clear is not set
+			if(write1)
+				content[write_index1]=write_data1;
+			//if write2 is set, and write one is set, or if they are writing to
+			//different regs, write using the second write port as well
+			if(write2&~(write1&(write_index1==write_index2)))
+				content[write_index2]=write_data2;
+			end//end else statement
+	assign read_data_1=content[read_index_1];
+	assign read_data_2=content[read_index_2];
+endmodule
+					</code>
+				</pre>
+			</div>
+
+			<!--
+			   - <div id=row2left class="row">
+			   - </div>
+			   -->
+		</div>
+
+		<div id="rhs" class = "column">
+<!--
+   -             <div id="row1right" class="row">
+   -             </div>
+   -
+   -             <div id="row3right" class="row">
+   -             </div>
+   -->
+		</div>
+	</div>
+
+</body>
+
+</html>
