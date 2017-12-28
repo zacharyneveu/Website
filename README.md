@@ -3,14 +3,13 @@ V2 TODO
 
 Colors
 ------
-- solarized Colorscheme
+- Solarized Colorscheme
 - keep it readable, not too dark
 
 Content
 -------
-- About me on home page, show name, but not as main content
-- Cluster graph of projects and code samples
-- Colors of circles correspond to type of content
-- Distance between nodes corresponds to similarity
+- Hexagon grid of projects
+- Colors of hexagon outlines correspond to type of content
+- Nodes organized to be near similar projects
 - "Z" to "N" spinning central node
-
+- Full page hexagon for each node on click

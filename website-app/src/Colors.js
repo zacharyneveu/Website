@@ -6,7 +6,7 @@ export const colors = {
     Base00: "#657b83",
     Base0:  "#839496",
     Base1:  "#93a1a1",
-    Base2:  "#3338d5",
+    Base2:  "#eee8d5",
     Base3:  "#fdf6e3",
     Yellow: "#b58900",
     Orange: "#cb4b16",

@@ -1,5 +1,75 @@
+/* Solarized Colors */
+:root {
+  --Base03: #002b36;
+  --Base02: #073642;
+  --Base01: #586e75;
+  --Base00: #657b83;
+  --Base0:  #839496;
+  --Base1:  #93a1a1;
+  --Base2:  #eee8d5;
+  --Base3:  #fdf6e3;
+  --Yellow: #b58900;
+  --Orange: #cb4b16;
+  --Red:    #dc322f;
+  --Magenta:#d33682;
+  --Violet: #6c71c4;
+  --Blue:   #268bd2;
+  --Cyan:   #2aa198;
+  --Green:  #859900;
+}
+
 body {
   margin: 0;
-  padding: 0;
+  padding: 1em;
   font-family: sans-serif;
+  background: var(--Base03);
+}
+
+div {
+  margin: auto;
+}
+
+svg {
+}
+
+svg g {
+  fill: var(--Base01);
+  fill-opacity: 0.6;
+}
+svg g:hover {
+  fill-opacity: 1;
+}
+svg g:hover text {
+  fill-opacity: 1;
+}
+
+svg g polygon {
+  stroke: var(--Base1);
+  stroke-width: 0.2;
+  transition: fill-opacity .2s;
+}
+
+svg g text {
+  font-size: 0.2em;
+  fill:var(--Base2);
+  fill-opacity: 0.9;
+  transition: fill-opacity .2s;
+}
+svg path {
+  fill: none;
+  stroke: hsl(60, 20%, 70%);
+  stroke-width: 0.4em;
+  stroke-opacity: 0.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#initials {
+  animation-name: initialsRotate;
+  animation-duration: 3s;
+}
+
+@keyframes initialsRotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 }
