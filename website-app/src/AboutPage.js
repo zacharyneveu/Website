@@ -1,10 +1,15 @@
 import React from 'react';
 import { HexGrid, Layout, Hexagon} from 'react-hexgrid';
 import colors from './Colors';
-import CircularProgressbar from 'react-circular-progressbar';
-import './AboutPage.css'
+//Dials for language knowledge
+//import CircularProgressbar from 'react-circular-progressbar';
+import ImageDial from './ImageDial'
+//Styling for dials
+import './Dials.css'
 
-
+/** About page displays a brief about me and guages showing my proficiency
+ * in a few key languages
+ */
 class AboutPage extends React.Component {
     render() {
         const layoutSize = {
@@ -30,7 +35,7 @@ class AboutPage extends React.Component {
         }
         const dialsStyle = {
             height: 100,
-            width: 100
+            width: 300
         }
         return (
             <div>
@@ -54,10 +59,10 @@ class AboutPage extends React.Component {
                    Cello.
                 </p>
                 <div id="Dials" style={dialsStyle}>
-                    <CircularProgressbar 
-                                        percentage={60}
-                                        initialAnimation={true}
-                                        textForPercentage={null} />
+                    <ImageDial imageLink="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+                    percentage={20} 
+                    width={200}
+                    height={200}/>
                 </div>
             </div>
             </div>
