@@ -1,6 +1,6 @@
 import React from 'react';
 import { HexGrid, Layout, Hexagon, Text, Pattern} from 'react-hexgrid';
-import colors from './Colors'
+//import colors from './Colors'
 
 class HomePage extends React.Component {
   constructor(props) {
