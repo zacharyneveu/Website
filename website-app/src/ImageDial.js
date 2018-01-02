@@ -1,6 +1,7 @@
 import React from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
 import PropTypes from 'prop-types';
+import './Dials.css';
 
 /* This module provides a wrapper for a circular dial with a central image */
 class ImageDial extends React.Component {

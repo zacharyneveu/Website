@@ -1,0 +1,12 @@
+@import "./colors.css";
+
+.HomeButton {
+    border-color: var(--Base01);
+    border-width: 5px;
+    border-radius: 6px;
+    border-style: solid;
+    width: 100px;
+    height: auto;
+    background: transparent;
+    color: var(--base2);
+}

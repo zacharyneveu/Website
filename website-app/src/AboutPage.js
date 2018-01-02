@@ -2,10 +2,8 @@ import React from 'react';
 import { HexGrid, Layout, Hexagon} from 'react-hexgrid';
 import colors from './Colors';
 //Dials for language knowledge
-//import CircularProgressbar from 'react-circular-progressbar';
 import ImageDial from './ImageDial'
-//Styling for dials
-import './Dials.css'
+import HomeButton from './Buttons'
 
 /** About page displays a brief about me and guages showing my proficiency
  * in a few key languages
@@ -54,7 +52,7 @@ class AboutPage extends React.Component {
                    </sup> year student at Northeastern University majoring in
                    Computer Engineering and minoring in Music Recording. I like
                    to write modular, well documented code that is easy to reuse.
-                   In addition to writing code I like to DJ, Ski, and play
+                   In addition to programming I like to DJ, Ski, and play
                    Cello.
                 </p>
                 <div id="Dials" style={dialsStyle}>
@@ -90,6 +88,8 @@ class AboutPage extends React.Component {
                     size={100}
                     margin='10px'/>
                 </div>
+                <br />
+                <HomeButton />
             </div>
             </div>
             )
