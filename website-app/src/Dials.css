@@ -1,5 +1,9 @@
 @import url("colors.css");
 
+.ImageDial {
+  display: inline-block;
+}
+
 .CircularProgressbar {
     width: 100%;
     position: relative;

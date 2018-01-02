@@ -61,7 +61,10 @@ class AboutPage extends React.Component {
                 <div id="Dials" style={dialsStyle}>
                     <ImageDial imageLink="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
                     percentage={20} 
-                    size={200} />
+                    size={100} />
+                    <ImageDial imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/544px-CSS3_logo_and_wordmark.svg.png"
+                    percentage={20} 
+                    size={100} />
                 </div>
             </div>
             </div>
