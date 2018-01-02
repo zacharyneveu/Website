@@ -34,8 +34,7 @@ class AboutPage extends React.Component {
             fontSize: "1.5em"
         }
         const dialsStyle = {
-            height: 100,
-            width: 300
+            width: '100%'
         }
         return (
             <div>
@@ -59,12 +58,37 @@ class AboutPage extends React.Component {
                    Cello.
                 </p>
                 <div id="Dials" style={dialsStyle}>
-                    <ImageDial imageLink="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
-                    percentage={20} 
-                    size={100} />
-                    <ImageDial imageLink="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/544px-CSS3_logo_and_wordmark.svg.png"
-                    percentage={20} 
-                    size={100} />
+                    {/*JUCE*/}
+                    <ImageDial imageLink="https://upload.wikimedia.org/wikipedia/commons/6/6b/JUCE_Logo.png"
+                    percentage={60} 
+                    size={100} 
+                    margin='10px'/>
+
+                    {/*C++*/}
+                    <ImageDial imageLink="https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png"
+                    percentage={80} 
+                    size={100} 
+                    margin='10px'/>
+
+                    {/*Python*/}
+                    <ImageDial imageLink="https://www.python.org/static/opengraph-icon-200x200.png"
+                    percentage={70} 
+                    size={100}
+                    margin='10px'/>
+
+
+                    {/*Javascript*/}
+                    <ImageDial imageLink="https://cdn.auth0.com/blog/es6rundown/logo.png"
+                    percentage={40} 
+                    size={100}
+                    margin='10px'/>
+
+
+                    {/*React*/}
+                    <ImageDial imageLink="https://raw.githubusercontent.com/rexxars/react-hexagon/HEAD/logo/react-hexagon.png"
+                    percentage={40} 
+                    size={100}
+                    margin='10px'/>
                 </div>
             </div>
             </div>
