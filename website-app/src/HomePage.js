@@ -2,6 +2,7 @@ import React from 'react';
 import { HexGrid, Layout, Hexagon, Text, Pattern } from 'react-hexgrid';
 //import colors from './Colors'
 import CustomHex from './CustomHex';
+import './HomePage.css';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -26,30 +27,28 @@ class HomePage extends React.Component {
       y: 0
     }
     const iconSize = {
-      x: 10,
-      y: 10
+      x: "10",
+      y: "10"
     }
 
     return (
       <div className="App">
         <HexGrid width='auto' height='100vh' viewBox="-50 -50 100 100">
-          <Layout size={layoutSize} flat={true} spacing={1.1} origin={layoutOG}>
+          <Layout size={layoutSize} flat={true} spacing={1} origin={layoutOG}>
             {/*About Page*/}
-            <CustomHex q={0} r={0} s={0} text="ZN" route="/about" holdText={true}/>
+            <CustomHex q={0} r={0} s={0} text="N" 
+                                         route="/about" 
+                                         holdText={true}
+                                         className="AboutHex"/>
 
-            <Hexagon q={0} r={-1} s={1}>
-              <Text>Code Samples</Text>
-            </Hexagon>
-            <Hexagon q={0} r={1} s={-1}>
-              <Text>Resume</Text>
-            </Hexagon>
+            <CustomHex q={0} r={-1} s={1} text="Code Samples" route="/code" />
 
-            <Hexagon q={-1} r={-0} s={1}>
-              <Text>Projects</Text>
-            </Hexagon>
-            <Hexagon q={1} r={-0} s={-1}>
-              <Text>Writing Sample</Text>
-            </Hexagon>
+            <CustomHex q={0} r={1} s={-1} text="Resume" 
+                  route="/resume" 
+                  holdText={true} />
+
+            <CustomHex q={-1} r={-0} s={1} text="Projects" holdText={true} />
+            <CustomHex q={1} r={-0} s={-1} text="Writing Sample" holdText={true}/>
 
             <CustomHex q={-1} r={1} s={0} fill="cello" 
                   text="Electric Cello"
@@ -57,7 +56,8 @@ class HomePage extends React.Component {
 
             <CustomHex q={1} r={-1} s={0} fill="alexa"
                   text="Alexa Speaker"
-                  route="/alexa"/>
+                  route="/alexa"
+                  className="alexa"/>
           </Layout>
 
           <Pattern id="fb"
@@ -74,8 +74,8 @@ class HomePage extends React.Component {
             size={layoutSize} />
 
           <Pattern id="alexa"
-            link="http://zacharyneveu.com/Images/DodecFinal.jpg"
-            size={layoutSize} />
+            link="https://vw-truaudio.storage.googleapis.com/images/pp-6_1.png"
+            size={iconSize} />
 
         </HexGrid>
       </div>

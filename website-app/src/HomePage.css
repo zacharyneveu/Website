@@ -1,0 +1,16 @@
+/*Rubic Mono One font*/
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
+
+.AboutHex g Text {
+    animation: spinHex 5s ease-in-out infinite;
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: .6em;
+}
+
+@keyframes spinHex {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50%   { transform: rotate(180deg); }
+    75%   { transform: rotate(270deg); }
+    100%   { transform: rotate(360deg); }
+}

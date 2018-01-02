@@ -34,17 +34,19 @@ class CustomHex extends React.Component {
                 onMouseLeave={this.hexLeft}
                 fill={this.props.fill ? this.props.fill : null}
                 onClick={this.goToPage}
+                className={this.props.className}
                 q={this.props.q}
                 r={this.props.r}
                 s={this.props.s}
                 >
+                {/*Render text if holdText set or if hovered is true*/}
                 <Text>{this.state.hovered | this.props.holdText ? this.props.text : ""}</Text>
             </Hexagon>
         )
     }
 }
 
-CustomHex.PropTypes = {
+CustomHex.propTypes = {
     /**URL with image to fill hexagon */
     fill: PropTypes.string,
     /** text to display in hexagon */
@@ -53,6 +55,8 @@ CustomHex.PropTypes = {
     route: PropTypes.string,
     /** Option to hold text on */
     holdText: PropTypes.bool,
+    /** Class name to be passed to hexagon */
+    className: PropTypes.string,
     /** coordinates of hexagon in grid */
     q: PropTypes.number.isRequired,
     r: PropTypes.number.isRequired,
