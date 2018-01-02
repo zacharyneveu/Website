@@ -38,7 +38,7 @@ class CustomHex extends React.Component {
                 r={this.props.r}
                 s={this.props.s}
                 >
-                <Text>{this.state.hovered ? this.props.text : ""}</Text>
+                <Text>{this.state.hovered | this.props.holdText ? this.props.text : ""}</Text>
             </Hexagon>
         )
     }
@@ -51,6 +51,8 @@ CustomHex.PropTypes = {
     text: PropTypes.string,
     /** Route to navigate to on click */
     route: PropTypes.string,
+    /** Option to hold text on */
+    holdText: PropTypes.bool,
     /** coordinates of hexagon in grid */
     q: PropTypes.number.isRequired,
     r: PropTypes.number.isRequired,

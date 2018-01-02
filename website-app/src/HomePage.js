@@ -7,24 +7,12 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.toAbout = this.toAbout.bind(this);
-    this.hexEntered = this.hexEntered.bind(this);
-    this.hexLeft = this.hexLeft.bind(this);
     this.state = { celloText: "" }
   }
 
   /** Navigate to the about screen */
   toAbout() {
     window.location.replace('/about');
-  }
-
-  /** When a hexagon is entered, update its text */
-  hexEntered() {
-    this.setState({ celloText: "Electric Cello" });
-  }
-
-  /** when a hexagon is exited, return text to blank */
-  hexLeft() {
-    this.setState({ celloText: "" });
   }
 
   render() {
@@ -47,9 +35,8 @@ class HomePage extends React.Component {
         <HexGrid width='auto' height='100vh' viewBox="-50 -50 100 100">
           <Layout size={layoutSize} flat={true} spacing={1.1} origin={layoutOG}>
             {/*About Page*/}
-            <Hexagon q={0} r={0} s={0} i onClick={this.toAbout}>
-              <Text>ZN</Text>
-            </Hexagon>
+            <CustomHex q={0} r={0} s={0} text="ZN" route="/about" holdText={true}/>
+
             <Hexagon q={0} r={-1} s={1}>
               <Text>Code Samples</Text>
             </Hexagon>
