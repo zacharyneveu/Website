@@ -5,7 +5,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 class ImageDial extends React.Component {
     render() {
         return (
-            <div style={{ position: 'relative', width: this.props.width, height: this.props.height }}>
+            <div style={{ position: 'relative', width: this.props.size, height: this.props.size }}>
                 <img style={{ position: 'absolute', width: '50%', left: '25%', top: '25%' }} src={this.props.imageLink} />
                 <div style={{ position: 'absolute' }}>
                     <CircularProgressbar
