@@ -1,16 +1,18 @@
 import React from 'react';
 import { HexGrid, Layout, Hexagon, Text, Pattern} from 'react-hexgrid';
-import './HomePage.css'
+import colors from './Colors'
 
 class HomePage extends React.Component {
   constructor(props) {
       super(props);
       this.toAbout = this.toAbout.bind(this);
   }
+
   toAbout() {
       window.location.replace('/about');
   }
   render() {
+
     const layoutSize = {
       x: 14,
       y: 14
@@ -23,11 +25,19 @@ class HomePage extends React.Component {
       x: 10,
       y: 10
     }
+
+    const aboutStyle = {
+      stroke: "yellow",
+      fill: "red",
+      strokeWidth: 0.8,
+      transition: "fill-opacity 0.2s",
+    }
+
     return (
       <div className="App">
         <HexGrid width='auto' height='100vh' viewBox="-50 -50 100 100">
-          <Layout size={layoutSize} flat={false} spacing={1.1} origin={layoutOG}>
-            <Hexagon q={0} r={0} s={0}i onClick={this.toAbout}>
+          <Layout size={layoutSize} flat={true} spacing={1.1} origin={layoutOG}>
+            <Hexagon cellStyle={aboutStyle} q={0} r={0} s={0}i onClick={this.toAbout}>
                <Text>ZN</Text>
             </Hexagon>
             <Hexagon q={0} r={-1} s={1}>
@@ -44,8 +54,10 @@ class HomePage extends React.Component {
               <Text>Writing Sample</Text>
             </Hexagon>
 
-            <Hexagon q={-1} r={1} s={0} fill="linkedin"></Hexagon>
-            <Hexagon q={1} r={-1} s={0}></Hexagon>
+            <Hexagon q={-1} r={1} s={0} fill="linkedin">
+            </Hexagon>
+            <Hexagon q={1} r={-1} s={0}>
+            </Hexagon>
           </Layout>
 
           <Pattern id="fb" 

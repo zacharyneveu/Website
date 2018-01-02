@@ -1,5 +1,5 @@
 /** Solarized Dark Colorscheme */
-export const colors = {
+const colors = {
     Base03: "#002b36",
     Base02: "#073642",
     Base01: "#586e75",
@@ -17,3 +17,5 @@ export const colors = {
     Cyan:   "#2aa198",
     Green:  "#859900"
 }
+
+export default colors;
