@@ -10,7 +10,7 @@ class HomeButton extends React.Component {
     }
     render() {
         return(
-          <button class="HomeButton" onClick={this.toHome} id="homeButton">
+          <button className="HomeButton" onClick={this.toHome} id="homeButton">
             Home
           </button>  
         );
