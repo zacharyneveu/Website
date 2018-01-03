@@ -19,8 +19,8 @@ class HomePage extends React.Component {
   render() {
 
     const layoutSize = {
-      x: 14,
-      y: 14
+      x: 18,
+      y: 18
     }
     const layoutOG = {
       x: 0,
@@ -74,8 +74,8 @@ class HomePage extends React.Component {
             size={layoutSize} />
 
           <Pattern id="alexa"
-            link="https://vw-truaudio.storage.googleapis.com/images/pp-6_1.png"
-            size={iconSize} />
+            link="https://img00.deviantart.net/84a0/i/2013/136/3/e/free_hexagon_pattern_02_by_black_light_studio-d65g32i.png"
+            size={layoutSize} />
 
         </HexGrid>
       </div>
