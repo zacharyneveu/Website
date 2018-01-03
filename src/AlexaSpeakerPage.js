@@ -44,9 +44,9 @@ class AlexaSpeakerPage extends React.Component {
                         assistant. 
                     </p> 
                     <PhotoGallery images={imageSrcs}
-                                  height="10vh"
+                                  height="20vh"
                                   width="auto"
-                                  interval={1}/>
+                                  interval={5}/>
                     <HomeButton />
                 </div>
             </div>
