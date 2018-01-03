@@ -1,0 +1,16 @@
+@import url("colors.css");
+
+.Page {
+    width: 70vh;
+    height: 85vh;
+    color: var(--Base2);
+    text-align: center;
+    position: relative;
+    margin-top: 6vh;
+}
+
+
+p {
+    line-height: 1.5em;
+    font-size: 1em;
+}
