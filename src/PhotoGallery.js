@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Colors from './Colors'
 
 /** Minimal photo gallery to scroll through a set of images */
 class PhotoGallery extends React.Component {
@@ -7,6 +8,7 @@ class PhotoGallery extends React.Component {
         super(props);
         this.incPhoto = this.incPhoto.bind(this);
         this.state = {curImage: null, imgIndex: 0};
+        this.incPhoto();
     }
 
     incPhoto() {
@@ -25,8 +27,12 @@ class PhotoGallery extends React.Component {
     render() {
         const galleryStyle = {
             height: this.props.height,
-            width: this.props.width
-        }
+            width: this.props.width,
+            borderWidth: 3,
+            borderRadius: "0.5em",
+            borderStyle: "solid",
+            borderColor: Colors.Base0,
+        };
         return(
             <div className="gallery">
                 <img src={this.state.curImage} 
