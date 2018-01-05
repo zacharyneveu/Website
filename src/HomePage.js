@@ -47,7 +47,9 @@ class HomePage extends React.Component {
                   route="/resume" 
                   holdText={true} />
 
-            <CustomHex q={-1} r={-0} s={1} text="Projects" holdText={true} />
+            <CustomHex q={-1} r={-0} s={1} text="Midi Controller"
+                                           holdText={true}
+                                           route='/midi' />
             <CustomHex q={1} r={-0} s={-1} text="Writing Sample" holdText={true}/>
 
             <CustomHex q={-1} r={1} s={0}
