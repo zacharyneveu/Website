@@ -1,5 +1,5 @@
 import React from 'react';
-import './Buttons.css'
+import './Buttons.css';
 
 /** This class provides a styled home button with a method to return
  * to the home page when clicked
