@@ -36,32 +36,36 @@ class HomePage extends React.Component {
         <HexGrid width='auto' height='100vh' viewBox="-50 -50 100 100">
           <Layout size={layoutSize} flat={true} spacing={1} origin={layoutOG}>
             {/*About Page*/}
-            <CustomHex q={0} r={0} s={0} text="N" 
-                                         route="/about" 
-                                         holdText={true}
-                                         className="AboutHex"/>
+            <CustomHex q={0} r={0} s={0} text="N"
+              route="/about"
+              holdText={true}
+              className="AboutHex" />
 
-            <CustomHex q={0} r={-1} s={1} text="Code Samples" route="/code" />
+            <CustomHex q={0} r={-1} s={1} text="Resume"
+              route="/resume"
+              holdText={true} />
 
-            <CustomHex q={0} r={1} s={-1} text="Resume" 
-                  route="/resume" 
-                  holdText={true} />
+            <CustomHex q={0} r={1} s={-1} text="IOT Location Tracker"
+              route="/location-tracker"
+              holdText={true} />
+
 
             <CustomHex q={-1} r={-0} s={1} text="Midi Controller"
-                                           holdText={true}
-                                           route='/midi' />
-            <CustomHex q={1} r={-0} s={-1} text="Writing Sample" holdText={true}/>
+              holdText={true}
+              route='/midi' />
+            <CustomHex q={1} r={-0} s={-1} text="Writing Sample" 
+              holdText={true} />
 
             <CustomHex q={-1} r={1} s={0}
-                  text="Electric Cello"
-                  route="/cello" 
-                  holdText={true}/>
+              text="Electric Cello"
+              route="/cello"
+              holdText={true} />
 
             <CustomHex q={1} r={-1} s={0}
-                  text="Alexa Speaker"
-                  route="/alexa"
-                  className="alexa"
-                  holdText={true}/>
+              text="Alexa Speaker"
+              route="/alexa"
+              className="alexa"
+              holdText={true} />
           </Layout>
 
           {/* Cello Scroll*/}

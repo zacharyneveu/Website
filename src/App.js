@@ -6,6 +6,7 @@ import AlexaSpeakerPage from './AlexaSpeakerPage';
 import ElectricCelloPage from './ElectricCelloPage';
 import MidiControllerPage from './MidiControllerPage';
 import HomeButton from './Buttons';
+import LocationTrackerPage from './LocationTrackerPage';
 
 class App extends React.Component {
   render() {
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Route path='/alexa' component={AlexaSpeakerPage} />
           <Route path='/cello' component={ElectricCelloPage} />
           <Route path='/midi' component={MidiControllerPage} />
+          <Route path='/location-tracker' component={LocationTrackerPage} />
           <Route component={HomeButton} />
         </Switch>
       </div>
