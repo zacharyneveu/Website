@@ -50,23 +50,17 @@ class HomePage extends React.Component {
             <CustomHex q={-1} r={-0} s={1} text="Projects" holdText={true} />
             <CustomHex q={1} r={-0} s={-1} text="Writing Sample" holdText={true}/>
 
-            <CustomHex q={-1} r={1} s={0} fill="cello" 
+            <CustomHex q={-1} r={1} s={0}
                   text="Electric Cello"
-                  route="/about" />
+                  route="/cello" 
+                  holdText={true}/>
 
-            <CustomHex q={1} r={-1} s={0} fill="alexa"
+            <CustomHex q={1} r={-1} s={0}
                   text="Alexa Speaker"
                   route="/alexa"
-                  className="alexa"/>
+                  className="alexa"
+                  holdText={true}/>
           </Layout>
-
-          <Pattern id="fb"
-            link="http://zacharyneveu.com/Images/facebook.png"
-            size={iconSize} />
-
-          <Pattern id="linkedin"
-            link="http://zacharyneveu.com/Images/linkedin.png"
-            size={iconSize} />
 
           {/* Cello Scroll*/}
           <Pattern id="cello"
@@ -74,8 +68,8 @@ class HomePage extends React.Component {
             size={layoutSize} />
 
           <Pattern id="alexa"
-            link="https://img00.deviantart.net/84a0/i/2013/136/3/e/free_hexagon_pattern_02_by_black_light_studio-d65g32i.png"
-            size={layoutSize} />
+            link="https://m.media-amazon.com/images/G/01/mobile-apps/dex/avs/docs/ux/branding/mark1._TTH_.png"
+            size={iconSize} />
 
         </HexGrid>
       </div>
