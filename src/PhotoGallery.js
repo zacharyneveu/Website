@@ -20,7 +20,7 @@ class PhotoGallery extends React.Component {
             this.setState({imgIndex: 0});
         }
 
-        this.state.curImage = this.props.images[this.state.imgIndex];
+        this.setState({ curImage: this.props.images[this.state.imgIndex] });
     }
 
 
