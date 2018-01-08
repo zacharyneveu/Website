@@ -1,7 +1,8 @@
 @import url("colors.css");
 
 .Page {
-    width: 70vh;
+    width: 80vw;
+    max-width: 70vh;
     height: 85vh;
     color: var(--Base2);
     text-align: center;
