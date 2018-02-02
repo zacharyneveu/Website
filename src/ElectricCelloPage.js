@@ -1,8 +1,9 @@
 import React from 'react';
-import LargeHex from './LargeHex';
 import HomeButton from './Buttons'
-import PhotoGallery from './PhotoGallery';
+import Slider from 'react-slick';
 import './ContentPage.css';
+import '../node_modules/slick-carousel/slick/slick.css';
+import './PhotoGallery.css';
 
 class ElectricCelloPage extends React.Component {
     render() {
@@ -17,12 +18,8 @@ class ElectricCelloPage extends React.Component {
 
         return(
             <div className="PageContainer">
-                <LargeHex />
                 <div className="Page">
-                    <br />
                     <h1>Electric Cello</h1> 
-                    <br />
-                    <br />
                     <p>
                     I've always played the cello, and the biggest issue I've
                     always had is volume: on stage, a single cello is too quiet,
@@ -35,11 +32,16 @@ class ElectricCelloPage extends React.Component {
                     cello end pin, pegs, and strings. The cello is fun to play,
                     and sounds great with a little DSP.
                     </p>
-                    <PhotoGallery images={imageSrcs}
-                                  height="30vh"
-                                  width="auto"
-                                  interval={5}/>
-                    <HomeButton />
+                <div className='container'>
+                    <Slider {...{dots: true}}>
+                    <div><img src={imageSrcs[0]} className='image'/></div>
+                    <div><img src={imageSrcs[1]} className='image'/></div>
+                    <div><img src={imageSrcs[2]} className='image'/></div>
+                    <div><img src={imageSrcs[3]} className='image'/></div>
+                    </Slider>
+                </div>
+                <br /><br />
+                <HomeButton />
                 </div>
             </div>
         )

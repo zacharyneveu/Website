@@ -11,7 +11,7 @@ class ImageDial extends React.Component {
                                                 display: 'inline-block', 
                                                 width: this.props.size, 
                                                 height: this.props.size,
-                                                margin: this.props.margin 
+                                                margin: this.props.margin ,
                                                 }}>
 
                 {/*TODO: Check image dimensions to choose to scale
@@ -30,7 +30,7 @@ class ImageDial extends React.Component {
                         percentage={this.props.percentage}
                         textForPercentage={null}
                         initialAnimation={true}
-                        strokeWidth={8}
+                        strokeWidth={16}
                     />
 
                 </div>

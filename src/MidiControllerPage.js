@@ -1,7 +1,6 @@
 import React from 'react';
-import LargeHex from './LargeHex';
-import HomeButton from './Buttons'
-import PhotoGallery from './PhotoGallery';
+import HomeButton from './Buttons';
+import Slider from 'react-slick';
 import './ContentPage.css';
 
 class MidiControllerPage extends React.Component {
@@ -14,12 +13,8 @@ class MidiControllerPage extends React.Component {
 
         return(
             <div className="PageContainer">
-                <LargeHex />
                 <div className="Page">
-                    <br />
                     <h1>Home-Built MIDI Controller</h1> 
-                    <br />
-                    <br />
                     <p>
                     The goal of this project was to create an instrument with
                     both audible and visual feedback. The project consists of a
@@ -32,10 +27,14 @@ class MidiControllerPage extends React.Component {
                     metal, and the control surface is self lit, eliminating the
                     need for a lamp.
                     </p>
-                    <PhotoGallery images={imageSrcs}
-                                  height="35vh"
-                                  width="auto"
-                                  interval={5}/>
+                    <div className='container'>
+                        <Slider {...{dots: true}}>
+                        <div><img src={imageSrcs[0]} className='image'/></div>
+                        <div><img src={imageSrcs[1]} className='image'/></div>
+                        <div><img src={imageSrcs[2]} className='image'/></div>
+                        </Slider>
+                    </div>
+                    <br />
                     <br />
                     <HomeButton />
                 </div>

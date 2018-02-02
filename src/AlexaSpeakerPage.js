@@ -1,7 +1,6 @@
 import React from 'react';
-import LargeHex from './LargeHex';
-import HomeButton from './Buttons'
-import PhotoGallery from './PhotoGallery';
+import HomeButton from './Buttons';
+import Slider from 'react-slick';
 import './ContentPage.css';
 
 class AlexaSpeakerPage extends React.Component {
@@ -12,11 +11,8 @@ class AlexaSpeakerPage extends React.Component {
         ];
         return(
             <div className="PageContainer">
-                <LargeHex />
                 <div className="Page">
-                    <br />
                     <h1>Custom Alexa Speaker</h1> 
-                    <br />
                     <p> 
                         I found an older model bluetooth speaker at a thrift
                         store for $10 and bought it with the intention of giving
@@ -43,10 +39,14 @@ class AlexaSpeakerPage extends React.Component {
                         engine to enable a custom wake word (name) for the
                         assistant. 
                     </p> 
-                    <PhotoGallery images={imageSrcs}
-                                  height="20vh"
-                                  width="auto"
-                                  interval={5}/>
+                    <div className='container'>
+                        <Slider {...{dots: true}}>
+                        <div><img src={imageSrcs[0]} className='image'/></div>
+                        <div><img src={imageSrcs[1]} className='image'/></div>
+                        </Slider>
+                    </div>
+                    <br />
+                    <br />
                     <HomeButton />
                 </div>
             </div>

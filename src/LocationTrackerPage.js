@@ -1,7 +1,6 @@
 import React from 'react';
-import LargeHex from './LargeHex';
-import HomeButton from './Buttons'
-import PhotoGallery from './PhotoGallery';
+import HomeButton from './Buttons';
+import Slider from 'react-slick';
 import './ContentPage.css';
 
 class LocationTrackerPage extends React.Component {
@@ -11,11 +10,9 @@ class LocationTrackerPage extends React.Component {
           "http://zacharyneveu.com/Images/smart2.jpg",
           "http://zacharyneveu.com/Images/smart3.jpg",
           "http://zacharyneveu.com/Images/smart4.jpg",
-          "http://zacharyneveu.com/Images/smart5.jpg"
         ];
         return(
             <div className="PageContainer">
-                <LargeHex />
                 <div className="Page">
                     <br />
                     <h1>Smart Home Location Tracker</h1> 
@@ -34,10 +31,15 @@ class LocationTrackerPage extends React.Component {
                     Pi 3 with a more cost-effective processing unit such as a
                     Raspberry Pi Zero.
                     </p> 
-                    <PhotoGallery images={imageSrcs}
-                                  height="35vh"
-                                  width="auto"
-                                  interval={5}/>
+                    <div className='container'>
+                        <Slider {...{dots: true}}>
+                        <div><img src={imageSrcs[0]} className='image'/></div>
+                        <div><img src={imageSrcs[1]} className='image'/></div>
+                        <div><img src={imageSrcs[2]} className='image'/></div>
+                        <div><img src={imageSrcs[3]} className='image'/></div>
+                        </Slider>
+                    </div>
+                    <br /><br />
                     <HomeButton />
                     <br />
                 </div>
